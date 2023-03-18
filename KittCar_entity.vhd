@@ -37,8 +37,6 @@ architecture Behavioral of KittCar is
 signal My_clock : std_logic;
 signal vect_slv_1 : std_logic_vector(NUM_OF_LEDS-1 downto o); --vector which feeds the leds 
 signal vect_slv_2 : std_logic_vector(NUM_OF_BITS-3 downto o); --vectore which feeds the leds 
-signal out_aux_1 : std_logic; --used to connect last output of shift register 1 to input of shift register 2 
-signal out_aux_2 : std_logic; --used to connect last output of shift register 2 to input of shift register 1 
 
 	component clock is
 	port(
@@ -84,16 +82,21 @@ begin
 	port map(
 		reset => reset,
 		clk	 => My_clock
-		data_in	=> 
-		data_out =>
+		data_in	=> vect_slv_2(SR_WIDTH-3)
+		data_out =>vect_slv_1
 	),
 		
 	shift_register_sipo_2 : ShiftRegisterSIPOv2
 	generic map(
-
+		SR_WIDTH => NUM_OF_LEDS-2   
+        SR_DEPTH => NUM_OF_BITS --now we don't need it because the sipo has SR-DEPTH words of 1 bit   
+        SR_INIT => 1 
 	)
 	port map(
-
+		reset => reset,
+		clk	 => My_clock
+		data_in	=> vect_slv_1(SR_WIDTH-1)
+		data_out =>vect_slv_2
 	),
 
 end Behavioral;
