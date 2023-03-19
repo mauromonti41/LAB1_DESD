@@ -1,43 +1,15 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 17.03.2023 16:51:22
--- Design Name: 
--- Module Name: Clock - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 use IEEE.math_real.all;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity Clock is
     generic(
-        CLK_PERIOD_NS			:	POSITIVE	RANGE	1	TO	100;	-- clk period in nanoseconds
-		MIN_KITT_CAR_STEP_MS	:	POSITIVE	RANGE	1	TO	2000;	-- Minimum step period in milliseconds (i.e., value in milliseconds of Delta_t)
+        CLK_PERIOD_NS			:	POSITIVE	RANGE	1	TO	100 := 10;	-- clk period in nanoseconds
+		MIN_KITT_CAR_STEP_MS	:	POSITIVE	RANGE	1	TO	2000 := 1;	-- Minimum step period in milliseconds (i.e., value in milliseconds of Delta_t)
         
-        NUM_OF_SWS		        :	INTEGER	    RANGE	1 TO 16 := 16	-- Number of input switches
-        
+        NUM_OF_SWS		        :	INTEGER	    RANGE	1 TO 16 := 16	-- Number of input switches  
     );
-
         Port (
             reset                : in std_logic;
             clk                  : in std_logic;
@@ -79,7 +51,7 @@ begin
             if counter = to_unsigned(counter_max, counter'LENGTH) then
                 counter <= (others => '0');
 
-                if to_integer(counter_effective) > to_integer(unsigned(input_sw)) then
+                if to_integer(counter_effective) = to_integer(unsigned(input_sw)) then
                     counter_effective <= (others => '0');
                     clock_out_signal <= not clock_out_signal;
                 else 
