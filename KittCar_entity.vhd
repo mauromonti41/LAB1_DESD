@@ -5,18 +5,16 @@ library IEEE;
 	use IEEE.math_real.all;
 ------------------------------------
 
-entity KittCar is
+entity KittCarPWM is
 	Generic (
 
 		CLK_PERIOD_NS			:	POSITIVE	RANGE	1	TO	100     := 10;	-- clk period in nanoseconds
 		MIN_KITT_CAR_STEP_MS	:	POSITIVE	RANGE	1	TO	2000    := 1;	-- Minimum step period in milliseconds (i.e., value in milliseconds of Delta_t)
 
-		NUM_OF_SWS		:	INTEGER	RANGE	1 TO 16 := 16;	-- Number of input switches
-		NUM_OF_LEDS		:	INTEGER	RANGE	1 TO 16 := 16;	-- Number of output LEDs
+		NUM_OF_SWS				:	INTEGER	RANGE	1 TO 16 := 16;	-- Number of input switches
+		NUM_OF_LEDS				:	INTEGER	RANGE	1 TO 16 := 16;	-- Number of output LEDs
 
-        SR_WIDTH        :   INTEGER RANGE   1 TO 16 := 16;
-		NUM_OF_BITS     :	INTEGER RANGE 	1 TO 16 := 1    -- we created it to define the width of shif registers 
-	
+		TAIL_LENGTH				:	INTEGER	RANGE	1 TO 16	:= 4	-- Tail length
 	);
 	Port (
 
@@ -31,7 +29,7 @@ entity KittCar is
 		----------------------------
 
 	);
-end KittCar;
+end KittCarPWM;
 
 architecture Behavioral of KittCar is
 
@@ -57,7 +55,7 @@ signal vect_slv_2 : std_logic_vector(NUM_OF_BITS-3 downto 0); --vectore which fe
 
 	component ShiftRegisterSIPOv2 is
 	Generic(
-        SR_WIDTH   :   INTEGER RANGE 1 TO 16 := 16;
+        SR_WIDTH   :   INTEGER RANGE 1 TO 16 := NUM_OF_LEDS;
         SR_DEPTH   :   INTEGER  := 1;
         SR_INIT    :   INTEGER   := 1 
     );
