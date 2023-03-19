@@ -4,7 +4,7 @@ library IEEE;
 
 entity ShiftRegisterSIPOv2 is
 	Generic(
-        SR_WIDTH   :   NATURAL   := 8;
+        SR_WIDTH   :   NATURAL   := 8;  -- commento di prova
         SR_DEPTH   :   POSITIVE  := 1;
         SR_INIT    :   INTEGER   := 1 
     );
