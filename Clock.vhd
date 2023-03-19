@@ -28,7 +28,7 @@ architecture Behavioral of Clock is
       
     signal counter : unsigned(counter_bits-1 DOWNTO 0) := (others => '0') ;
     signal counter_effective : unsigned(NUM_OF_SWS-1 DOWNTO 0) := (others => '0');
---    signal clock_aux : std_logic := '0'; -- auxiliary clock signal
+   -- signal clock_aux : std_logic := '0'; -- auxiliary clock signal
     signal clock_out_signal : std_logic := '0'; --output clock signal'
     
 begin
@@ -43,7 +43,7 @@ begin
             
              counter  <= (others => '0');
              counter_effective <= (others => '0');
-            -- clock_aux <= '0';
+            
              clock_out_signal <= '0';
                   
         elsif rising_edge(clk) then
