@@ -24,7 +24,7 @@ architecture Behavioral of Clock is
     --division is done in pre-processing, doesn't affect board usage
     constant counter_max : integer := (MIN_KITT_CAR_STEP_MS*1000000 / CLK_PERIOD_NS); --auxiliary constant, could be avoided
     constant counter_max_half : integer := counter_max/2;
-    constant counter_bits : integer := integer(log2(real(counter_max_half)));
+    constant counter_bits : integer := integer(log2(real(counter_max_half)))+ 1;
       
     signal counter : unsigned(counter_bits-1 DOWNTO 0) := (others => '0') ;
     signal counter_effective : unsigned(NUM_OF_SWS-1 DOWNTO 0) := (others => '0');
@@ -48,7 +48,7 @@ begin
                   
         elsif rising_edge(clk) then
             
-            if counter = to_unsigned(counter_max, counter'LENGTH) then
+            if counter = to_unsigned(counter_max_half, counter'LENGTH) then
                 counter <= (others => '0');
 
                 if to_integer(counter_effective) = to_integer(unsigned(input_sw)) then
