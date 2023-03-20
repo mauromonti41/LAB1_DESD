@@ -21,7 +21,7 @@ entity PulseWidthModulator is
 		T_ON_INIT	:	POSITIVE	:= 64;				-- Init of Ton
 		PERIOD_INIT	:	POSITIVE	:= 128;				-- Init of Periof
 
-		PWM_INIT	:	STD_LOGIC:= '0'					-- Init of PWM     --e' un pwm al contrario???
+		PWM_INIT	:	STD_LOGIC:= '1'					-- Init of PWM     --e' un pwm al contrario???
 	);
 	Port (
 
@@ -138,10 +138,8 @@ begin
 		end if;
 
 	end process;
-
+	
 	----------------------------
-
-
 	-------------------------------------------------------------------
 
 
