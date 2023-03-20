@@ -70,19 +70,23 @@ clk <= not clk after BOARD_CLK/2;
      
  end process;
 
-dut_clock : process 
-begin
-    wait for 100 ms;
-    input_sw(0) <= '1';
-    wait for 100 ms;
-    input_sw(1) <= '1';
-    wait for 100 ms;
-    input_sw(2) <= '1';
-    wait for 100 ms;
-    input_sw(3) <= '1';
-    wait for 100 ms;
-    input_sw(4) <= '1';
-    wait;
+-- dut_clock : process 
+-- begin
+--     wait for 100 ns;
+--     input_sw(0) <= '1';
+--     wait for 100 ns;
+--     input_sw(1) <= '1';
+--     wait for 100 ns;
+--     input_sw(2) <= '1';
+--     wait for 100 ns;
+--     input_sw(3) <= '1';
+--     wait for 100 ns;
+--     input_sw(4) <= '1';
+--     wait for 100 ns;
+--     input_sw(5) <= '1';
+--     wait;
 
-end process;
+-- end process;
+
+
 end Behavioral;

@@ -69,11 +69,11 @@ begin
     inst_pwm: for I in 0 to NUM_OF_LEDS-1 generate
         
         pwm_inst_I: PWM
-        -- generic map (
-        --     --BIT_LENGTH <= ???;		        -- Bit used  inside PWM
+         generic map (
+             BIT_LENGTH <= 3,		        -- Bit used  inside PWM
 
-        --     -- Init of PWM     --e' un pwm al contrario???
-        -- );
+             Init of PWM     --e' un pwm al contrario???
+         );
         port map (
             reset => reset,
             clk => clk,
