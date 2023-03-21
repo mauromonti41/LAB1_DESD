@@ -47,6 +47,7 @@ architecture Behavioral of PulseWidthModulator is
 	---------- INIT ------------
 	constant	T_ON_INIT_UNS	:	UNSIGNED(BIT_LENGTH-1 downto 0)	:= to_unsigned(T_ON_INIT-1, BIT_LENGTH);	--perche' il -1????????
 	constant	PERIOD_INIT_UNS	:	UNSIGNED(BIT_LENGTH-1 downto 0) := to_unsigned(PERIOD_INIT -1, BIT_LENGTH);
+	constant	counter_2_max	:	INTEGER RANGE	1 TO 16 		:= 100000/ to_integer(signed(Period));
 	----------------------------
 
 	-----------------------------------------------------------------
@@ -60,6 +61,7 @@ architecture Behavioral of PulseWidthModulator is
 	signal	Period_reg	:	UNSIGNED(BIT_LENGTH-1 downto 0)	:= PERIOD_INIT_UNS;
 
 	signal	count		:	UNSIGNED(BIT_LENGTH-1 downto 0)	:= (Others => '0');
+	signal	counter_2	:	UNSIGNED(BIT_LENGTH-1 downto 0)	:= (Others => '0');
 
 	signal	pwm_reg		:	STD_LOGIC	:= PWM_INIT;
 	----------------------------
@@ -92,51 +94,56 @@ begin
 
 		elsif rising_edge(clk) then
 
-
-			-- Count the clock pulses
-			count	<= count + 1;
-
-
-			-- Define the period (Period +1 clk pulses)
-			if count = unsigned(Period_reg) then
-
-				-- Reset count
-				count		<= (Others => '0');
-
-				-- Toggle the output (set on)
-				pwm_reg	<= PWM_INIT;
+			if counter_2 = to_unsigned(counter_2_max, counter_2'length) then -- tail_length è bit_length
+			
+				counter_2 <= (others => '0') ;
+			
+			
+				-- Count the clock pulses
+				count	<= count + 1;
 
 
-				-- Sample Period and Ton to guarantee glitch-less behavior inside a period and on rising_edge(clk)
-				Period_reg	<=	unsigned(Period);
-				Ton_reg		<=	unsigned(Ton);
+				-- Define the period (Period +1 clk pulses)
+				if count = unsigned(Period_reg) then
 
+					-- Reset count
+					count		<= (Others => '0');
+
+					-- Toggle the output (set on)
+					pwm_reg	<= PWM_INIT;
+
+
+					-- Sample Period and Ton to guarantee glitch-less behavior inside a period and on rising_edge(clk)
+					Period_reg	<=	unsigned(Period);
+					Ton_reg		<=	unsigned(Ton);
+
+				end if;
+
+
+
+				-- Define the duty cycle (Ton clk pulses), (* required if Ton = 2**BIT_LENGTH -1)
+				if count = Ton_reg-1 then
+
+					-- Togle the output
+					pwm_reg	<= not PWM_INIT;
+
+				end if;
+
+
+
+				-- If duty cycle = 0
+				if Ton_reg = 0 then
+					pwm_reg	<= not PWM_INIT;
+				end if;
+
+				-- if duty cycle = 1
+				if Ton_reg > Period_reg then
+					pwm_reg	<= PWM_INIT;
+				end if;
+			else 
+				counter_2 <= counter_2 +1;
 			end if;
-
-
-
-			-- Define the duty cycle (Ton clk pulses), (* required if Ton = 2**BIT_LENGTH -1)
-			if count = Ton_reg-1 then
-
-				-- Togle the output
-				pwm_reg	<= not PWM_INIT;
-
-			end if;
-
-
-
-			-- If duty cycle = 0
-			if Ton_reg = 0 then
-				pwm_reg	<= not PWM_INIT;
-			end if;
-
-			-- if duty cycle = 1
-			if Ton_reg > Period_reg then
-				pwm_reg	<= PWM_INIT;
-			end if;
-
 		end if;
-
 	end process;
 
 	----------------------------
