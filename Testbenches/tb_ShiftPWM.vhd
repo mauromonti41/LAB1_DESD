@@ -17,6 +17,7 @@ architecture Behavioral of tb_ShiftPWM is
             ---------- Reset/Clock ----------
             reset   :   IN  STD_LOGIC;
             clk     :   IN  STD_LOGIC;
+            clock_slow : IN STD_LOGIC;
             ------------- Data --------------
             led_out  :   OUT   STD_LOGIC_VECTOR(0 to NUM_OF_LEDS-1)
         );
@@ -30,10 +31,12 @@ architecture Behavioral of tb_ShiftPWM is
 
     constant GIVEN_CLK : time := 1 ms;
     constant RESET_WND : time := 5 ms;
+    constant CLK_PERIOD : time := 10 ns;
     
 
     signal reset : STD_LOGIC := '0';
-    signal clk : STD_LOGIC := '1';
+    signal clk : STD_LOGIC := '0';
+    signal clk_slow : STD_LOGIC := '0';
     signal led_out_sign : STD_LOGIC_VECTOR(0 to DUT_NUM_OF_LEDS-1) := ((others => '0') );
     
     
@@ -50,13 +53,15 @@ begin
     port map (
         reset => reset,
         clk => clk,
+        clock_slow => clk_slow,
 
         led_out => led_out_sign
     );
         
     ----------clk generation------------
 
-    clk <= not clk after GIVEN_CLK/2;
+    clk <= not clk after CLK_PERIOD/2;
+    clk_slow <= not clk_slow after GIVEN_CLK/2;
 
 --------------------------------------
 
