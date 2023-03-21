@@ -14,6 +14,8 @@ entity KittCarPWM is
 		NUM_OF_SWS				:	INTEGER	RANGE	1 TO 16 := 16;	-- Number of input switches
 		NUM_OF_LEDS				:	INTEGER	RANGE	1 TO 16 := 16;	-- Number of output LEDs
 
+		NUM_OF_BITS				:	INTEGER	RANGE	1 TO 16 := 16;	-- What's this???
+
 		TAIL_LENGTH				:	INTEGER	RANGE	1 TO 16	:= 4	-- Tail length
 	);
 	Port (
@@ -31,7 +33,7 @@ entity KittCarPWM is
 	);
 end KittCarPWM;
 
-architecture Behavioral of KittCar is
+architecture Behavioral of KittCarPWM is
 
 signal My_clock : std_logic;
 signal vect_slv_1 : std_logic_vector(NUM_OF_LEDS-1 downto 0); --vector which feeds the leds 

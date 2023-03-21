@@ -27,7 +27,7 @@ architecture Behavioral of ShiftPWM is
 		T_ON_INIT	:	POSITIVE	:= 64;				-- Init of Ton
 		PERIOD_INIT	:	POSITIVE	:= 128;				-- Init of Periof
 
-		PWM_INIT	:	STD_LOGIC:= '0'					-- Init of PWM     --e' un pwm al contrario???
+		PWM_INIT	:	STD_LOGIC:= '1'					-- Init of PWM     --e' un pwm al contrario???
 	);
 	Port (
 
@@ -58,7 +58,7 @@ architecture Behavioral of ShiftPWM is
     type    MEM_ARRAY_TYPE_1  is  array(0 TO NUM_OF_LEDS-1) of std_logic_vector(SR_WIDTH-1 downto 0);
     type    MEM_ARRAY_TYPE_2  is  array(1 TO NUM_OF_LEDS-2) of std_logic_vector(SR_WIDTH-1 downto 0);
     
-    type    MEM_ARRAY_TYPE_3  is  array(0 TO TAIL_LENGTH-2) of std_logic_vector(SR_WIDTH-1 downto 0);  -- tipo che usiamo per shift register di inizializzazione
+    type    MEM_ARRAY_TYPE_3  is  array(0 TO TAIL_LENGTH-1) of std_logic_vector(SR_WIDTH-1 downto 0);  -- tipo che usiamo per shift register di inizializzazione
     ---------------------------------
 
     ------------------------- Signal Declaration -------------------------
@@ -79,8 +79,8 @@ architecture Behavioral of ShiftPWM is
 
 begin
 
-    ini_value : for I in 0 TO TAIL_LENGTH-2 generate
-        mem_ini(I) <= std_logic_vector(to_unsigned(TAIL_LENGTH-1, mem_ini(I)'LENGTH));        
+    ini_value : for I in 0 TO TAIL_LENGTH-1 generate
+        mem_ini(I) <= std_logic_vector(to_unsigned(TAIL_LENGTH-I, mem_ini(I)'LENGTH));        
     end generate;
             
         inst_pwm: for I in 0 to NUM_OF_LEDS - 1 generate
@@ -113,7 +113,7 @@ begin
         if (reset = '1') then
 
             mem_fin <= (Others => ((others => '0') ));
-            mem_fin(0) <= std_logic_vector(to_unsigned(TAIL_LENGTH, SR_WIDTH));  
+           --mem_fin(0) <= std_logic_vector(to_unsigned(TAIL_LENGTH, SR_WIDTH));  
             mem_1 <= (Others => ((others => '0') ));
             mem_2 <= (Others => ((others => '0') ));
             clock_count <= ((others => '0'));
@@ -124,10 +124,10 @@ begin
             mem_2  <=  mem_2(2 TO NUM_OF_LEDS-2) & mem_1(NUM_OF_LEDS-1);
 
             
-            for I in 0 TO TAIL_LENGTH-2 loop
+            for I in 0 TO TAIL_LENGTH-1 loop
 
                 if clock_count = I then
-                    mem_1(I) <= mem_ini(I);
+                    mem_1(0) <= mem_ini(I);
                     clock_count <= clock_count + 1;
                 end if;
 
