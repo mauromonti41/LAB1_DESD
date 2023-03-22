@@ -1,0 +1,98 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Wed Mar 22 14:55:45 2023
+| Host         : LAPTOP-DUQD03P4 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file KittCar_entity_control_sets_placed.rpt
+| Design       : KittCar_entity
+| Device       : xc7a35t
+-------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    20 |
+|    Minimum number of control sets                        |    20 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    78 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    20 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |    16 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     4 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              49 |           17 |
+| No           | No                    | Yes                    |              85 |           22 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             212 |           46 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+---------------------------------------------------+------------------+------------------+----------------+--------------+
+|  Clock Signal  |                   Enable Signal                   | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+---------------------------------------------------+------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[14].pwm_inst_I/Period_reg | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[15].pwm_inst_I/Period_reg | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[1].pwm_inst_I/Period_reg  | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[2].pwm_inst_I/Period_reg  | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[3].pwm_inst_I/Period_reg  | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[4].pwm_inst_I/Period_reg  | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[0].pwm_inst_I/Period_reg  | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[10].pwm_inst_I/Period_reg | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[11].pwm_inst_I/Period_reg | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[5].pwm_inst_I/Period_reg  | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[6].pwm_inst_I/Period_reg  | reset_IBUF       |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[7].pwm_inst_I/Period_reg  | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[8].pwm_inst_I/Period_reg  | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[9].pwm_inst_I/Period_reg  | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[12].pwm_inst_I/Period_reg | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | shift_PWM_inst/inst_pwm[13].pwm_inst_I/Period_reg | reset_IBUF       |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | clock_inst/counter_effective                      | reset_IBUF       |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG |                                                   |                  |               17 |             49 |         2.88 |
+|  clk_IBUF_BUFG |                                                   | reset_IBUF       |               22 |             85 |         3.86 |
+|  clk_IBUF_BUFG | clock_inst/E[0]                                   | reset_IBUF       |               25 |            132 |         5.28 |
++----------------+---------------------------------------------------+------------------+------------------+----------------+--------------+
+
+

@@ -19,7 +19,7 @@ entity ShiftPWM is
 end ShiftPWM;
 
 architecture Behavioral of ShiftPWM is
-
+    
     component PulseWidthModulator is
         Generic(
 
@@ -46,6 +46,22 @@ architecture Behavioral of ShiftPWM is
 
 	);
     end component;
+
+    component clock is
+        generic(
+           CLK_PERIOD_NS			:	POSITIVE	RANGE	1	TO	100 := 10;	-- clk period in nanoseconds
+           MIN_KITT_CAR_STEP_MS	:	POSITIVE	RANGE	1	TO	2000 := 1;	-- Minimum step period in milliseconds (i.e., value in milliseconds of Delta_t)
+           
+           NUM_OF_SWS		        :	INTEGER	    RANGE	1 TO 16 := 16	-- Number of input switches  
+       );
+       port(
+           reset : in std_logic;
+           clk : in std_logic;
+   
+           input_sw : in std_logic_vector(NUM_OF_SWS-1 downto 0);
+           clock_out : out std_logic
+       );
+       end component;
 
     ----------------------- Constants Declaration ------------------------
     

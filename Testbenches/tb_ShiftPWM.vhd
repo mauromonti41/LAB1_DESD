@@ -1,5 +1,5 @@
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+    use IEEE.STD_LOGIC_1164.ALL;
 
 
 entity tb_ShiftPWM is
@@ -26,7 +26,6 @@ architecture Behavioral of tb_ShiftPWM is
 
     constant DUT_NUM_OF_LEDS : INTEGER := 16;
     constant DUT_TAIL_LENGHT : INTEGER := 4;
-    --constant DUT_NUM_OF_LEDS : INTEGER := 16;
 
 
     constant GIVEN_CLK : time := 1 ms;

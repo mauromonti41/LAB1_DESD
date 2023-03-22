@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1679493173">
+  <File Type="BITSTR-BMM" Name="KittCar_entity_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="KittCar_entity_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="KittCar_entity_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="KittCar_entity_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="KittCar_entity.tcl"/>
+  <File Type="OPT-TIMING" Name="KittCar_entity_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="KittCar_entity_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="KittCar_entity_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="KittCar_entity_reports.tcl"/>
+  <File Type="OPT-DRC" Name="KittCar_entity_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="KittCar_entity.hwdef"/>
+  <File Type="PWROPT-DCP" Name="KittCar_entity_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="KittCar_entity_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="KittCar_entity_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="KittCar_entity_placed.dcp"/>
+  <File Type="PLACE-IO" Name="KittCar_entity_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="KittCar_entity_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="KittCar_entity_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="KittCar_entity_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="KittCar_entity_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="KittCar_entity_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="KittCar_entity_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="KittCar_entity_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="KittCar_entity_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="KittCar_entity.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="KittCar_entity_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="KittCar_entity_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="KittCar_entity_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="KittCar_entity.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="KittCar_entity_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="KittCar_entity_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="KittCar_entity_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="KittCar_entity_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="KittCar_entity_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="KittCar_entity_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="KittCar_entity_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="KittCar_entity.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="KittCar_entity_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="KittCar_entity_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="KittCar_entity_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="KittCar_entity_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="KittCar_entity_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="KittCar_entity_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="KittCar_entity_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="KittCar_entity_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="KittCar_entity_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="KittCar_entity_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="KittCar_entity_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="KittCar_entity_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="KittCar_entity_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="KittCar_entity_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="KittCar_entity_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="KittCar_entity_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="KittCar_entity_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="KittCar_entity_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="KittCar_entity_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="KittCar_entity_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="KittCar_entity_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="KittCar_entity.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="KittCar_entity_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="KittCar_entity.rbt"/>
+  <File Type="BITSTR-NKY" Name="KittCar_entity.nky"/>
+  <File Type="PDI-FILE" Name="KittCar_entity.pdi"/>
+  <File Type="RCFI_FILE" Name="KittCar_entity.rcfi"/>
+  <File Type="CFI_FILE" Name="KittCar_entity.cfi"/>
+  <File Type="RNPI_FILE" Name="KittCar_entity.rnpi"/>
+  <File Type="NPI_FILE" Name="KittCar_entity.npi"/>
+  <File Type="RBD_FILE" Name="KittCar_entity.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="KittCar_entity.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="KittCar_entity.sysdef"/>
+  <File Type="BG-BGN" Name="KittCar_entity.bgn"/>
+  <File Type="BG-DRC" Name="KittCar_entity.drc"/>
+  <File Type="RDI-RDI" Name="KittCar_entity.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../Documents/Github/LAB1_DESD/Clock.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../Documents/Github/LAB1_DESD/PulseWidthModulator.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../Documents/Github/LAB1_DESD/ShiftPWM.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../Documents/Github/LAB1_DESD/KittCar_entity.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="KittCar_entity"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../Downloads/basys3_master_xdc.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

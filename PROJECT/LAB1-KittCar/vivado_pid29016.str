@@ -1,0 +1,850 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:45 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 29016
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Wed Mar 22 13:52:09 CET 2023
+Time zone: 	Central European Standard Time (Europe/Berlin)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=15
+Scale size: 19
+
+Java version: 	11.0.2 64-bit
+Java home: 	D:/Vivado/Vivado/2020.2/tps/win64/jre11.0.2
+Java executable location: 	D:/Vivado/Vivado/2020.2/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	mauro
+User home directory: C:/Users/mauro
+User working directory: C:/Users/mauro/Desktop/LAB1-KittCar
+User country: 	IT
+User language: 	it
+User locale: 	it_IT
+
+RDI_BASEROOT: D:/Vivado/Vivado
+HDI_APPROOT: D:/Vivado/Vivado/2020.2
+RDI_DATADIR: D:/Vivado/Vivado/2020.2/data
+RDI_BINDIR: D:/Vivado/Vivado/2020.2/bin
+
+Vivado preferences file location: C:/Users/mauro/AppData/Roaming/Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: C:/Users/mauro/AppData/Roaming/Xilinx/Vivado/2020.2/
+Vivado layouts directory: C:/Users/mauro/AppData/Roaming/Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	D:/Vivado/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/mauro/Desktop/LAB1-KittCar/vivado.log
+Vivado journal file location: 	C:/Users/mauro/Desktop/LAB1-KittCar/vivado.jou
+Engine tmp dir: 	C:/Users/mauro/Desktop/LAB1-KittCar/.Xil/Vivado-29016-LAPTOP-DUQD03P4
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Vivado/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: D:/Vivado/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: D:/Vivado/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: D:/Vivado/Vivado/2020.2
+XILINX_VIVADO: D:/Vivado/Vivado/2020.2
+XILINX_VIVADO_HLS: D:/Vivado/Vivado/2020.2
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,013 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// WARNING: HEventQueue.dispatchEvent() is taking  3010 ms.
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\mauro\Desktop\LAB1-KittCar\LAB1-KittCar.xpr. Version: Vivado v2020.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,013 MB. GUI used memory: 54 MB. Current time: 3/22/23, 1:52:10 PM CET
+// Tcl Message: open_project C:/Users/mauro/Desktop/LAB1-KittCar/LAB1-KittCar.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/mauro/Desktop/LAB1-KittCar/LAB1-KittCar.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 117 MB (+120444kb) [00:16:17]
+// [Engine Memory]: 1,013 MB (+910645kb) [00:16:17]
+// WARNING: HEventQueue.dispatchEvent() is taking  11094 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.2/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:50 ; elapsed = 00:00:21 . Memory (MB): peak = 1007.660 ; gain = 0.000 
+// [GUI Memory]: 132 MB (+9662kb) [00:16:27]
+// Project name: LAB1-KittCar; location: C:/Users/mauro/Desktop/LAB1-KittCar; part: xc7a35tcpg236-1
+dismissDialog("Open Project"); // bz
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 10 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ShiftPWM(Behavioral) (ShiftPWM.vhd)]", 1); // D
+// PAPropertyPanels.initPanels (KittCar_entity.vhd) elapsed time: 0.4s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd)]", 4, true); // D - Node
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd)]", 4); // D
+// Elapsed time: 76 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ShiftPWM(Behavioral) (ShiftPWM.vhd), xil_defaultlib.pulsewidthmodulator]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ShiftPWM(Behavioral) (ShiftPWM.vhd), xil_defaultlib.pulsewidthmodulator]", 3, false, false, false, false, true, false); // D - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ShiftPWM(Behavioral) (ShiftPWM.vhd), xil_defaultlib.pulsewidthmodulator]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ShiftPWM(Behavioral) (ShiftPWM.vhd), xil_defaultlib.pulsewidthmodulator]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ShiftPWM(Behavioral) (ShiftPWM.vhd), xil_defaultlib.pulsewidthmodulator]", 3, false, false, false, false, true, false); // D - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+// Elapsed time: 25 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 7); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 8); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 8); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 7); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ShiftPWM(Behavioral) (ShiftPWM.vhd), PulseWidthModulator(Behavioral) (PulseWidthModulator.vhd)]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd)]", 4, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd)]", 4, true, false, false, false, false, true); // D - Double Click - Node
+// Elapsed time: 10 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd)]", 4, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd)]", 4, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenuItem(PAResourceQtoS.SrcMenu_OPEN_SELECTED_SOURCE_FILES, "Open File"); // ak
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ShiftPWM(Behavioral) (ShiftPWM.vhd)]", 1, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenuItem(PAResourceQtoS.SrcMenu_OPEN_SELECTED_SOURCE_FILES, "Open File"); // ak
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftPWM.vhd", 1); // m
+// Elapsed time: 24 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd)]", 4, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd)]", 4, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ah
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ah
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: set_property top KittCarPWM [current_fileset] 
+// bz (cr):  Set as Top : addNotify
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Set as Top"); // bz
+// WARNING: HTimer (FileMgr Design Graph Update Timer) is taking 553ms to process. Increasing delay to 3000 ms.
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd)]", 1); // D
+// [GUI Memory]: 140 MB (+723kb) [00:19:51]
+// Elapsed time: 10 seconds
+selectCodeEditor("ShiftPWM.vhd", 229, 97); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "KittCar_entity.vhd", 0); // m
+// Elapsed time: 76 seconds
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; Not started ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Vivado Implementation Defaults (Vivado Implementation 2020) ; Vivado Implementation Default Reports (Vivado Implementation 2020) ; xc7a35tcpg236-1 ; Default settings for Implementation.", 1, (String) null, 9, false); // az
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 1s
+// WARNING: HEventQueue.dispatchEvent() is taking  1322 ms.
+// Elapsed time: 299 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd), clock_inst : Clock(Behavioral) (Clock.vhd)]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ShiftPWM(Behavioral) (ShiftPWM.vhd)]", 3, true); // D - Node
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftPWM.vhd", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "KittCar_entity.vhd", 0); // m
+selectCodeEditor("KittCar_entity.vhd", 135, 518); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 355 seconds
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd), shift_PWM_inst : ShiftPWM(Behavioral) (ShiftPWM.vhd)]", 3); // D
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd), shift_PWM_inst : ShiftPWM(Behavioral) (ShiftPWM.vhd)]", 3); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd), shift_PWM_inst : ShiftPWM(Behavioral) (ShiftPWM.vhd)]", 3); // D
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd), shift_PWM_inst : ShiftPWM(Behavioral) (ShiftPWM.vhd)]", 3); // D
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,013 MB. GUI used memory: 79 MB. Current time: 3/22/23, 2:22:12 PM CET
+// Elapsed time: 869 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd), shift_PWM_inst : ShiftPWM(Behavioral) (ShiftPWM.vhd)]", 3); // D
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftPWM.vhd", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "KittCar_entity.vhd", 0); // m
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCarPWM(Behavioral) (KittCar_entity.vhd), shift_PWM_inst : ShiftPWM(Behavioral) (ShiftPWM.vhd)]", 3); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 4); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, basys3_master_xdc.xdc]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, basys3_master_xdc.xdc]", 6, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("basys3_master_xdc.xdc", 5, 156); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 43, 183); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 6, 176); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 47, 261); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 0, 180); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 587, 579, false, false, false, true, false); // bP - Popup Trigger
+selectCodeEditor("basys3_master_xdc.xdc", 304, 450, false, false, false, true, false); // bP - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_TOGGLE_LINE_COMMENTS, "Toggle Line Comments"); // ak
+selectCodeEditor("basys3_master_xdc.xdc", 516, 604); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 105 seconds
+selectCodeEditor("basys3_master_xdc.xdc", 3, 135); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 285, 149, false, false, false, true, false); // bP - Popup Trigger
+selectCodeEditor("basys3_master_xdc.xdc", 182, 167); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 407, 136); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 87, 174); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 5, 135); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 280, 140, false, false, false, true, false); // bP - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_TOGGLE_LINE_COMMENTS, "Toggle Line Comments"); // ak
+selectCodeEditor("basys3_master_xdc.xdc", 517, 196); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 160, 184, false, false, false, true, false); // bP - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_TOGGLE_LINE_COMMENTS, "Toggle Line Comments"); // ak
+selectCodeEditor("basys3_master_xdc.xdc", 391, 428); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 467, 463); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 468, 451); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 569, 457); // bP
+// Elapsed time: 10 seconds
+selectCodeEditor("basys3_master_xdc.xdc", 370, 182); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 386, 186); // bP
+// Elapsed time: 35 seconds
+selectCodeEditor("basys3_master_xdc.xdc", 474, 434); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 228, 368); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 211, 373); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 244, 370); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 253, 366); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 362, 370); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("basys3_master_xdc.xdc", 139, 402); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 262, 392); // bP
+// TclEventType: DG_GRAPH_STALE
+// G (cr): Invalid Top Module: addNotify
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 11 seconds
+dismissDialog("Invalid Top Module"); // G
+selectCodeEditor("basys3_master_xdc.xdc", 303, 413); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 246, 393); // bP
+// G (cr): Invalid Top Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Invalid Top Module"); // G
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCar_entity(Behavioral) (KittCar_entity.vhd)]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, KittCar_entity(Behavioral) (KittCar_entity.vhd)]", 1, true); // D - Node
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "KittCar_entity.vhd", 0); // m
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "basys3_master_xdc.xdc", 2); // m
+selectCodeEditor("basys3_master_xdc.xdc", 592, 342); // bP
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES, "Add or create constraints"); // a
+selectButton("NEXT", "Next >"); // JButton
+selectButton("CANCEL", "Cancel"); // JButton
+// 'g' command handler elapsed time: 7 seconds
+dismissDialog("Add Sources"); // c
+// Elapsed time: 15 seconds
+unMinimizeFrame(PAResourceOtoP.PAViews_TCL_CONSOLE, "Tcl Console"); // az
+// Elapsed time: 20 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftPWM.vhd", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "KittCar_entity.vhd", 0); // m
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 20, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// am (cr): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a
+// TclEventType: FILE_SET_CHANGE
+// bz (cr):  Save Constraints : addNotify
+// A (cr): No Implementation Results Available: addNotify
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Save Project"); // am
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+// bz (cr):  Resetting Runs : addNotify
+// cD (cr): Launch Runs: addNotify
+dismissDialog("No Implementation Results Available"); // A
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// 'cA' command handler elapsed time: 6 seconds
+dismissDialog("Launch Runs"); // cD
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// bz (cr):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Mar 22 14:29:32 2023] Launched synth_1... Run output will be captured here: C:/Users/mauro/Desktop/LAB1-KittCar/LAB1-KittCar.runs/synth_1/runme.log [Wed Mar 22 14:29:32 2023] Launched impl_1... Run output will be captured here: C:/Users/mauro/Desktop/LAB1-KittCar/LAB1-KittCar.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bz
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 108 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "basys3_master_xdc.xdc", 2); // m
+// Elapsed time: 11 seconds
+selectCodeEditor("basys3_master_xdc.xdc", 222, 128); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 240, 121); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 270, 164); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "KittCar_entity.vhd", 0); // m
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// ag (cr): Bitstream Generation Failed: addNotify
+// Elapsed time: 143 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_LOG_WINDOW
+dismissDialog("Bitstream Generation Failed"); // ag
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Open Synthesized Design]", 15, true); // u - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_NETLIST_DESIGN
+// ce (cr): Synthesis is Out-of-date: addNotify
+selectButton(PAResourceQtoS.StaleRunDialog_NO, "Cancel"); // a
+// 'dV' command handler elapsed time: 5 seconds
+dismissDialog("Synthesis is Out-of-date"); // ce
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12, true); // u - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_RTL_DESIGN
+// A (cr): Elaborate Design: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// bz (cr):  Open Elaborated Design : addNotify
+dismissDialog("Elaborate Design"); // A
+// Tcl Message: synth_design -rtl -rtl_skip_mlo -name rtl_1 
+// Tcl Message: Command: synth_design -rtl -rtl_skip_mlo -name rtl_1 Starting synth_design Using part: xc7a35tcpg236-1 Top: KittCar_entity 
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 320ms to process. Increasing delay to 2000 ms.
+// TclEventType: ELABORATE_START
+// [Engine Memory]: 1,127 MB (+66249kb) [00:58:40]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,127 MB. GUI used memory: 82 MB. Current time: 3/22/23, 2:34:47 PM CET
+// TclEventType: ELABORATE_FINISH
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: SIGNAL_MODIFY
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,300 MB. GUI used memory: 82 MB. Current time: 3/22/23, 2:35:02 PM CET
+// [Engine Memory]: 1,302 MB (+124546kb) [00:58:57]
+// Xgd.load filename: D:/Vivado/Vivado/2020.2/data/parts/xilinx/artix7/devint/artix7/xc7a35t/xc7a35t.xgd; ZipEntry: xc7a35t_detail.xgd elapsed time: 0.7s
+// DeviceModel: Load Xgds SwingWorker Join Forever elapsed time: 1s
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgdAndInitRouteStorage elapsed time: 1.2s
+// [GUI Memory]: 150 MB (+3845kb) [00:59:00]
+// [Engine Memory]: 1,405 MB (+39559kb) [00:59:00]
+// Schematic: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  5153 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7a35tcpg236-1 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1334.316 ; gain = 250.012 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-638] synthesizing module 'KittCar_entity' [C:/Users/mauro/Documents/Github/LAB1_DESD/KittCar_entity.vhd:36] 
+// Tcl Message: 	Parameter CLK_PERIOD_NS bound to: 10 - type: integer  	Parameter MIN_KITT_CAR_STEP_MS bound to: 1 - type: integer  	Parameter NUM_OF_SWS bound to: 16 - type: integer  	Parameter NUM_OF_LEDS bound to: 16 - type: integer  	Parameter NUM_OF_BITS bound to: 16 - type: integer  	Parameter TAIL_LENGTH bound to: 4 - type: integer  	Parameter CLK_PERIOD_NS bound to: 10 - type: integer  	Parameter MIN_KITT_CAR_STEP_MS bound to: 1 - type: integer  	Parameter NUM_OF_SWS bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-3491] module 'Clock' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/Clock.vhd:6' bound to instance 'clock_inst' of component 'clock' [C:/Users/mauro/Documents/Github/LAB1_DESD/KittCar_entity.vhd:73] INFO: [Synth 8-638] synthesizing module 'Clock' [C:/Users/mauro/Documents/Github/LAB1_DESD/Clock.vhd:22] 
+// Tcl Message: 	Parameter CLK_PERIOD_NS bound to: 10 - type: integer  	Parameter MIN_KITT_CAR_STEP_MS bound to: 1 - type: integer  	Parameter NUM_OF_SWS bound to: 16 - type: integer  
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'Clock' (1#1) [C:/Users/mauro/Documents/Github/LAB1_DESD/Clock.vhd:22] 
+// Tcl Message: 	Parameter NUM_OF_LEDS bound to: 16 - type: integer  	Parameter TAIL_LENGTH bound to: 4 - type: integer  
+// Tcl Message: INFO: [Synth 8-3491] module 'ShiftPWM' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:6' bound to instance 'shift_PWM_inst' of component 'ShiftPWM' [C:/Users/mauro/Documents/Github/LAB1_DESD/KittCar_entity.vhd:86] INFO: [Synth 8-638] synthesizing module 'ShiftPWM' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:21] 
+// Tcl Message: 	Parameter NUM_OF_LEDS bound to: 16 - type: integer  	Parameter TAIL_LENGTH bound to: 4 - type: integer  	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] INFO: [Synth 8-638] synthesizing module 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:43] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-256] done synthesizing module 'PulseWidthModulator' (2#1) [C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:43] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] 
+// Tcl Message: 	Parameter BIT_LENGTH bound to: 3 - type: integer  	Parameter T_ON_INIT bound to: 64 - type: integer  	Parameter PERIOD_INIT bound to: 128 - type: integer  	Parameter PWM_INIT bound to: 1'b1  
+// Tcl Message: INFO: [Synth 8-3491] module 'PulseWidthModulator' declared at 'C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd:16' bound to instance 'pwm_inst_I' of component 'PulseWidthModulator' [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:106] INFO: [Synth 8-256] done synthesizing module 'ShiftPWM' (3#1) [C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd:21] INFO: [Synth 8-256] done synthesizing module 'KittCar_entity' (4#1) [C:/Users/mauro/Documents/Github/LAB1_DESD/KittCar_entity.vhd:36] 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1389.977 ; gain = 305.672 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1397.844 ; gain = 313.539 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 1397.844 ; gain = 313.539 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1397.844 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Parsing XDC File [C:/Users/mauro/Downloads/basys3_master_xdc.xdc] 
+// Tcl Message: Finished Parsing XDC File [C:/Users/mauro/Downloads/basys3_master_xdc.xdc] Completed Processing XDC Constraints  
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1507.902 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Tcl Message: RTL Elaboration Complete:  : Time (s): cpu = 00:00:25 ; elapsed = 00:00:23 . Memory (MB): peak = 1603.633 ; gain = 519.328 
+// Tcl Message: 29 Infos, 2 Warnings, 2 Critical Warnings and 0 Errors encountered. synth_design completed successfully 
+// Tcl Message: synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 1603.633 ; gain = 595.973 
+// [GUI Memory]: 161 MB (+3422kb) [00:59:05]
+// 'dV' command handler elapsed time: 44 seconds
+// WARNING: HEventQueue.dispatchEvent() is taking  1795 ms.
+// U (cr): Critical Messages: addNotify
+// Elapsed time: 39 seconds
+dismissDialog("Open Elaborated Design"); // bz
+// Elapsed time: 22 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OPEN_MESSAGES_VIEW, "Open Messages View"); // a
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Critical Messages"); // U
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "basys3_master_xdc.xdc", 4); // m
+// Elapsed time: 14 seconds
+selectCodeEditor("basys3_master_xdc.xdc", 475, 162); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 484, 155); // bP
+// Elapsed time: 37 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftPWM.vhd", 3); // m
+selectButton(PAResourceAtoD.AbstractFileView_RELOAD, "Reload"); // h
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "KittCar_entity.vhd", 2); // m
+// Elapsed time: 19 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Schematic", 1); // m
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "KittCar_entity.vhd", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Schematic", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, [Common 17-55] 'set_property' expects at least one object. [C:/Users/mauro/Downloads/basys3_master_xdc.xdc:111]. ]", 4, true); // ah - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;C:\Users\mauro\Downloads\basys3_master_xdc.xdc;-;;-;16;-;line;-;111;-;;-;16;-;"); // ah
+selectCodeEditor("basys3_master_xdc.xdc", 431, 220); // bP
+// Elapsed time: 16 seconds
+selectCodeEditor("basys3_master_xdc.xdc", 357, 217); // bP
+// Elapsed time: 10 seconds
+selectCodeEditor("basys3_master_xdc.xdc", 431, 240); // bP
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectCodeEditor("basys3_master_xdc.xdc", 552, 253); // bP
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 24, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+// bz (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// cD (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// 'cA' command handler elapsed time: 5 seconds
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // cD
+// bz (cr):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Mar 22 14:38:28 2023] Launched synth_1... Run output will be captured here: C:/Users/mauro/Desktop/LAB1-KittCar/LAB1-KittCar.runs/synth_1/runme.log [Wed Mar 22 14:38:28 2023] Launched impl_1... Run output will be captured here: C:/Users/mauro/Desktop/LAB1-KittCar/LAB1-KittCar.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bz
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftPWM.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Schematic", 1); // m
+// [GUI Memory]: 170 MB (+1047kb) [01:03:00]
+// Elapsed time: 17 seconds
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // F
+selectButton(PAResourceCommand.PACommandNames_ZOOM_FIT, "Schematic_zoom_fit"); // E
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Elapsed time: 49 seconds
+closeView(PAResourceOtoP.PAViews_SCHEMATIC, "Schematic"); // f
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 436ms to process. Increasing delay to 3000 ms.
+// ag (cr): Bitstream Generation Failed: addNotify
+// Elapsed time: 141 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_LOG_WINDOW
+dismissDialog("Bitstream Generation Failed"); // ag
+// Elapsed time: 33 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design]", 22, true); // u - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_IMPLEMENTED_DESIGN
+// g (cr): Close Design: addNotify
+selectButton(PAResourceAtoD.ClosePlanner_NO, "No"); // a
+// bz (cr):  Open Implemented Design : addNotify
+dismissDialog("Close Design"); // g
+// Tcl Message: open_run impl_1 
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,756 MB. GUI used memory: 107 MB. Current time: 3/22/23, 2:43:22 PM CET
+// [Engine Memory]: 1,756 MB (+295017kb) [01:07:16]
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgdAndInitRouteStorage elapsed time: 1.3s
+// Device: addNotify
+// DeviceView Instantiated
+// PAPropertyPanels.initPanels (basys3_master_xdc.xdc) elapsed time: 0.2s
+// WARNING: HEventQueue.dispatchEvent() is taking  3491 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1637.684 ; gain = 0.000 
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2020.2 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Timing 38-478] Restoring timing data from binary archive. INFO: [Timing 38-479] Binary timing data restore complete. INFO: [Project 1-856] Restoring constraints from binary archive. INFO: [Project 1-853] Binary constraint restore complete. 
+// Tcl Message: Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.196 . Memory (MB): peak = 2252.105 ; gain = 0.000 
+// Tcl Message: Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.198 . Memory (MB): peak = 2252.105 ; gain = 0.000 Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2252.105 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Tcl Message: open_run: Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2319.195 ; gain = 698.105 
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Device view-level: 0,0
+// TclEventType: DRC_ADDED
+// TclEventType: METHODOLOGY_ADDED
+// [Engine Memory]: 1,844 MB (+221kb) [01:07:23]
+// TclEventType: POWER_UPDATED
+// WARNING: HEventQueue.dispatchEvent() is taking  2376 ms.
+// TclEventType: TIMING_SUMMARY_UPDATED
+// WARNING: HEventQueue.dispatchEvent() is taking  1203 ms.
+// 'dV' command handler elapsed time: 41 seconds
+// WARNING: HEventQueue.dispatchEvent() is taking  1893 ms.
+// Device view-level: 0,1
+// Device view-level: 0,0
+// Elapsed time: 33 seconds
+dismissDialog("Open Implemented Design"); // bz
+// HMemoryUtils.trashcanNow. Engine heap size: 1,876 MB. GUI used memory: 124 MB. Current time: 3/22/23, 2:43:37 PM CET
+selectTab((HResource) null, (HResource) null, "Methodology", 7); // aK
+selectTab((HResource) null, (HResource) null, "Timing", 8); // aK
+selectTab((HResource) null, (HResource) null, "Methodology", 7); // aK
+// [GUI Memory]: 180 MB (+1498kb) [01:07:49]
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING-17 ;  ; ", 3, "TIMING-17", 0, true); // P - Node
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[KittCar_entity, clock_inst (Clock)]", 3); // bC
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[KittCar_entity, clock_inst (Clock), Nets (143)]", 4); // bC
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[KittCar_entity, clock_inst (Clock), Nets (143)]", 4); // bC
+// Elapsed time: 10 seconds
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING-17 ;  ; ", 3); // P
+collapseTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "Bad Practice (346) ;  ; ", 2); // P
+selectTab((HResource) null, (HResource) null, "Power", 5); // aK
+// Elapsed time: 10 seconds
+selectTree(PAResourceOtoP.PowerResultTab_REPORT_NAVIGATION_TREE, "[Report Contents, Utilization Details, I/O]", 10, false); // h
+selectTree(PAResourceOtoP.PowerResultTab_REPORT_NAVIGATION_TREE, "[Report Contents, Utilization Details]", 3, true); // h - Node
+selectTree(PAResourceOtoP.PowerResultTab_REPORT_NAVIGATION_TREE, "[Report Contents, Utilization Details, Hierarchical]", 4, false); // h
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aK
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; write_bitstream ERROR ; NA ; NA ; NA ; NA ; NA ; 7.018957614898682 ; 0 ; 190 ; 346 ; 0.0 ; 0 ; 0 ; Wed Mar 22 14:40:18 CET 2023 ; 00:01:50 ; Vivado Implementation Defaults (Vivado Implementation 2020) ; Vivado Implementation Default Reports (Vivado Implementation 2020) ; xc7a35tcpg236-1 ; Default settings for Implementation.", 1, "impl_1", 0, false); // az
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.5s
+// Device view-level: 0,2
+// Device view-level: 0,2
+// HMemoryUtils.trashcanNow. Engine heap size: 1,901 MB. GUI used memory: 126 MB. Current time: 3/22/23, 2:44:52 PM CET
+// Elapsed time: 13 seconds
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[KittCar_entity, shift_PWM_inst (ShiftPWM)]", 6); // bC
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[KittCar_entity, shift_PWM_inst (ShiftPWM)]", 6); // bC
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[KittCar_entity, clock_inst (Clock)]", 3); // bC
+// Elapsed time: 11 seconds
+selectTab((HResource) null, (HResource) null, "Methodology", 7); // aK
+selectTab((HResource) null, (HResource) null, "Reports", 3); // aK
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, -55992, 323136); // E
+// Device view-level: 1,2
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 7937, 368297); // E
+// Device view-level: 1,8
+// HMemoryUtils.trashcanNow. Engine heap size: 1,907 MB. GUI used memory: 131 MB. Current time: 3/22/23, 2:45:20 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,908 MB. GUI used memory: 128 MB. Current time: 3/22/23, 2:45:21 PM CET
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 105046, 524729); // E
+// Device view-level: 0,2
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 94399, 331265); // E
+// Device view-level: 1,8
+// HMemoryUtils.trashcanNow. Engine heap size: 1,908 MB. GUI used memory: 146 MB. Current time: 3/22/23, 2:45:23 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,910 MB. GUI used memory: 160 MB. Current time: 3/22/23, 2:45:24 PM CET
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 101398, 405475); // E
+// Device view-level: 0,2
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, -225689, 260135); // E
+// Device view-level: 1,0
+// HMemoryUtils.trashcanNow. Engine heap size: 1,910 MB. GUI used memory: 141 MB. Current time: 3/22/23, 2:45:26 PM CET
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 124685, 414066); // E
+// Device view-level: 0,2
+selectTab((HResource) null, (HResource) null, "Timing", 8); // aK
+// Device view-level: 0,1
+selectTab((HResource) null, (HResource) null, "Methodology", 7); // aK
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "Bad Practice (346) ;  ; ", 2); // P
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING-17 ;  ; ", 3); // P
+// [GUI Memory]: 189 MB (+288kb) [01:10:16]
+// Elapsed time: 36 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftPWM.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "KittCar_entity.vhd", 2); // m
+// Elapsed time: 89 seconds
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; Critical Warning ; The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 4, "The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 2, false); // P
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; Critical Warning ; The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 4, "The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 2, false); // P
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; Critical Warning ; The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 4, "The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 2, false); // P
+expandTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; Critical Warning ; The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 4); // P
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; Critical Warning ; The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 4, "The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 2, false, false, false, false, false, true); // P - Double Click
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; Critical Warning ; The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 4, "The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 2, false); // P
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; Critical Warning ; The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 4, "The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 2, false); // P
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING-17 ;  ; ", 3, "TIMING-17", 0, true); // P - Node
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; Critical Warning ; The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 4, "The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 2, false); // P
+selectTreeTable(PAResourceTtoZ.VioTreeTablePanel_VIO_TREE_TABLE, "TIMING #1 ; Critical Warning ; The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 4, "The clock pin clock_inst/clock_out_signal_reg/C is not reached by a timing clock", 2, false, false, false, false, true, false); // P - Popup Trigger
+selectMenuItem(PAResourceTtoZ.VioTreeTablePanel_COPY_DRC_INFORMATION, "Copy"); // ak
+// Elapsed time: 50 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ShiftPWM.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Device", 1); // m
+// HMemoryUtils.trashcanNow. Engine heap size: 1,910 MB. GUI used memory: 126 MB. Current time: 3/22/23, 2:48:52 PM CET
+// Elapsed time: 19 seconds
+selectTab((HResource) null, (HResource) null, "DRC", 6); // aK
+selectTab((HResource) null, (HResource) null, "Power", 5); // aK
+collapseTreeTable(PAResourceOtoP.PowerInstTreeTablePanel_POWER_INST_TREE_TABLE, "6.9143414 ; KittCar_entity ;  ;  ;  ;  ; ", 0); // f
+expandTreeTable(PAResourceOtoP.PowerInstTreeTablePanel_POWER_INST_TREE_TABLE, "6.9143414 ; KittCar_entity ;  ;  ;  ;  ; ", 0); // f
+selectTreeTable(PAResourceOtoP.PowerInstTreeTablePanel_POWER_INST_TREE_TABLE, "6.9143414 ; KittCar_entity ;  ;  ;  ;  ; ", 0, "6.9143414", 0, true, false, false, false, false, true); // f - Double Click - Node
+expandTreeTable(PAResourceOtoP.PowerInstTreeTablePanel_POWER_INST_TREE_TABLE, "1.4655535 ; shift_PWM_inst (ShiftPWM) ; 0.525 ; 0.517 ; 0.008 ; 0.941 ; <0.001", 2); // f
+collapseTreeTable(PAResourceOtoP.PowerInstTreeTablePanel_POWER_INST_TREE_TABLE, "1.4655535 ; shift_PWM_inst (ShiftPWM) ; 0.525 ; 0.517 ; 0.008 ; 0.941 ; <0.001", 2); // f
+collapseTreeTable(PAResourceOtoP.PowerInstTreeTablePanel_POWER_INST_TREE_TABLE, "6.9143414 ; KittCar_entity ;  ;  ;  ;  ; ", 0); // f
+expandTreeTable(PAResourceOtoP.PowerInstTreeTablePanel_POWER_INST_TREE_TABLE, "6.9143414 ; KittCar_entity ;  ;  ;  ;  ; ", 0); // f
+selectTreeTable(PAResourceOtoP.PowerInstTreeTablePanel_POWER_INST_TREE_TABLE, "6.9143414 ; KittCar_entity ;  ;  ;  ;  ; ", 0, "6.9143414", 0, true, false, false, false, false, true); // f - Double Click - Node
+collapseTreeTable(PAResourceOtoP.PowerInstTreeTablePanel_POWER_INST_TREE_TABLE, "6.9143414 ; KittCar_entity ;  ;  ;  ;  ; ", 0); // f
+collapseTree(PAResourceOtoP.PowerResultTab_REPORT_NAVIGATION_TREE, "[Report Contents, Utilization Details, Signals]", 5); // h
+selectTree(PAResourceOtoP.PowerResultTab_REPORT_NAVIGATION_TREE, "[Report Contents, Settings]", 0, false); // h
+// Elapsed time: 24 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design, Report Utilization]", 31, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RESOURCE_UTILIZATION
+// a (cr): Report Utilization: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Report Utilization"); // a
+// TclEventType: UTILIZATION_RESULT_GENERATED
+// bz (cr):  Report Utilization : addNotify
+// Tcl Message: report_utilization -name utilization_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,910 MB. GUI used memory: 134 MB. Current time: 3/22/23, 2:49:57 PM CET
+// WARNING: HEventQueue.dispatchEvent() is taking  2743 ms.
+dismissDialog("Report Utilization"); // bz
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs, LUT as Logic]", 4, false); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic]", 2, true); // l - Node
+collapseTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3); // l
+collapseTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice Registers]", 4); // l
+collapseTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic Distribution]", 5); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3, true); // l - Node
+expandTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs, LUT as Logic]", 4, false); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs, LUT as Logic]", 4, false); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs, LUT as Logic]", 4, false); // l
+expandTreeTable((HResource) null, "shift_PWM_inst (ShiftPWM) ; 153", 1); // K
+collapseTreeTable((HResource) null, "shift_PWM_inst (ShiftPWM) ; 153", 1); // K
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs, LUT as Logic]", 4, false); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3, true); // l - Node
+collapseTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3); // l
+collapseTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic]", 2); // l
+expandTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic]", 2); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3, true); // l - Node
+expandTreeTable((HResource) null, "shift_PWM_inst (ShiftPWM) ; 153", 1); // K
+collapseTreeTable((HResource) null, "shift_PWM_inst (ShiftPWM) ; 153", 1); // K
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice Registers]", 4, true); // l - Node
+expandTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice Registers]", 4); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice Registers, Register as Flip Flop]", 5, false); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice Registers]", 4, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice Registers, Register as Flip Flop]", 5, false); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice Registers]", 4, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice LUTs]", 3, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice Registers]", 4, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice Registers, Register as Flip Flop]", 5, false); // l
+collapseTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic, Slice Registers]", 4); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic Distribution]", 5, true); // l - Node
+expandTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic Distribution]", 5); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic Distribution, Slice]", 6, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic Distribution, Slice, SLICEM]", 7, false); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic Distribution, Slice, SLICEL]", 8, false); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic Distribution, Slice, SLICEM]", 7, false); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic Distribution, Slice, SLICEL]", 8, false); // l
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic Distribution, Slice Registers]", 9, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic Distribution, LUT as Logic]", 14, true); // l - Node
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, IO and GT Specific, Bonded IOB]", 20, true); // l - Node
+// Elapsed time: 34 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "basys3_master_xdc.xdc", 4); // m
+selectCodeEditor("basys3_master_xdc.xdc", 30, 173); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 656, 175, false, false, false, true, false); // bP - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_TOGGLE_BLOCK_COMMENTS, "Toggle Block Comments"); // ak
+selectMenuItem(RDIResource.HInputHandler_TOGGLE_LINE_COMMENTS, "Toggle Line Comments"); // ak
+selectCodeEditor("basys3_master_xdc.xdc", 700, 309); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 187, 178); // bP
+// Elapsed time: 13 seconds
+selectCodeEditor("basys3_master_xdc.xdc", 511, 208); // bP
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 35, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+dismissDialog("Synthesis is Out-of-date"); // A
+// Elapsed time: 12 seconds
+selectCodeEditor("basys3_master_xdc.xdc", 502, 75); // bP
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 35, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): Synthesis is Out-of-date: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a
+// bz (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Synthesis is Out-of-date"); // A
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// cD (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// 'cA' command handler elapsed time: 3 seconds
+// TclEventType: RUN_LAUNCH
+dismissDialog("Launch Runs"); // cD
+// TclEventType: DESIGN_STALE
+// TclEventType: RUN_LAUNCH
+// bz (cr):  Generate Bitstream : addNotify
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// Tcl Message: [Wed Mar 22 14:52:54 2023] Launched synth_1... Run output will be captured here: C:/Users/mauro/Desktop/LAB1-KittCar/LAB1-KittCar.runs/synth_1/runme.log 
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: [Wed Mar 22 14:52:54 2023] Launched impl_1... Run output will be captured here: C:/Users/mauro/Desktop/LAB1-KittCar/LAB1-KittCar.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Generate Bitstream"); // bz
+// Elapsed time: 30 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Open Implemented Design, Report Utilization]", 31, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RESOURCE_UTILIZATION
+// a (cr): Report Utilization: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Report Utilization"); // a
+selectTree(PAResourceQtoS.ReportUtilTab_REPORT_UTILIZATION_NAVIGATION_TREE, "[Report Contents, Slice Logic Distribution, Slice Registers]", 9, true); // l - Node
+selectTab((HResource) null, (HResource) null, "Design Runs", 4); // aK
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "synth_1 ; constrs_1 ; Running synth_design... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; Wed Mar 22 14:53:04 CET 2023 ; 00:00:21 ; Vivado Synthesis Defaults (Vivado Synthesis 2020) ; Vivado Synthesis Default Reports (Vivado Synthesis 2020) ; xc7a35tcpg236-1 ; Vivado Synthesis Defaults", 0, (String) null, 10, true); // az - Node
+// PAPropertyPanels.initPanels (synth_1) elapsed time: 0.2s
+selectTreeTable(PAResourceEtoH.ExpRunTreePanel_EXP_RUN_TREE_TABLE, "impl_1 ; constrs_1 ; Queued... ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ;  ; 00:00:00 ; Vivado Implementation Defaults (Vivado Implementation 2020) ; Vivado Implementation Default Reports (Vivado Implementation 2020) ; xc7a35tcpg236-1 ; Default settings for Implementation.", 1, (String) null, 10, false); // az
+// PAPropertyPanels.initPanels (impl_1) elapsed time: 0.2s
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// ag (cr): Bitstream Generation Failed: addNotify
+// Elapsed time: 181 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// Run Command: PAResourceCommand.PACommandNames_LOG_WINDOW
+dismissDialog("Bitstream Generation Failed"); // ag
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 295, 119); // q
+// Elapsed time: 10 seconds
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 393, 160); // q
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 774, 120); // q
+selectCodeEditor(PAResourceItoN.LogMonitor_MONITOR, 656, 143); // q
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aK
+// Elapsed time: 11 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, DRC, Pin Planning, [DRC NSTD-1] Unspecified I/O Standard: 1 out of 34 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: reset.. ]", 11, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, DRC, Pin Planning, [DRC NSTD-1] Unspecified I/O Standard: 1 out of 34 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: reset.. ]", 11, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, DRC, Pin Planning, [DRC UCIO-1] Unconstrained Logical Port: 1 out of 34 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: reset.. ]", 12, false); // ah
+// [GUI Memory]: 199 MB (+404kb) [01:22:07]
+// Elapsed time: 50 seconds
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // F
+selectCodeEditor("basys3_master_xdc.xdc", 456, 378); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 583, 412); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 176, 250); // bP
+selectCodeEditor("basys3_master_xdc.xdc", 231, 191); // bP

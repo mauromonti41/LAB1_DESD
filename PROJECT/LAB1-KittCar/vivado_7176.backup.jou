@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Mar 21 18:34:13 2023
+# Process ID: 7176
+# Current directory: C:/Users/mauro/Desktop/LAB1-KittCar
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent32664 C:\Users\mauro\Desktop\LAB1-KittCar\LAB1-KittCar.xpr
+# Log file: C:/Users/mauro/Desktop/LAB1-KittCar/vivado.log
+# Journal file: C:/Users/mauro/Desktop/LAB1-KittCar\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/mauro/Desktop/LAB1-KittCar/LAB1-KittCar.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftRegisterSIPOv2.vhd] -no_script -reset -force -quiet
+remove_files  C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftRegisterSIPOv2.vhd
+export_ip_user_files -of_objects  [get_files C:/Users/mauro/Documents/Github/LAB1_DESD/KittCar_entity.vhd] -no_script -reset -force -quiet
+remove_files  C:/Users/mauro/Documents/Github/LAB1_DESD/KittCar_entity.vhd
+remove_files  C:/Users/mauro/Documents/Github/LAB1_DESD/KittCar_entity.vhd
+add_files -norecurse C:/Users/mauro/Documents/Github/LAB1_DESD/ShiftPWM.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse {C:/Users/mauro/Documents/Github/LAB1_DESD/PulseWidthModulator.vhd C:/Users/mauro/Documents/Github/LAB1_DESD/KittCar_entity.vhd}
+update_compile_order -fileset sources_1
