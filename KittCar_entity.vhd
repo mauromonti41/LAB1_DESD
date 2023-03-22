@@ -21,7 +21,7 @@ entity KittCar_entity is
 	Port (
 
 		------- Reset/Clock --------
-		reset	:	IN	STD_LOGIC;
+		reset	:	IN	STD_LOGIC ;
 		clk		:	IN	STD_LOGIC;
 		----------------------------
 
