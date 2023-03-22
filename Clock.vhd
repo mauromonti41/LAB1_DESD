@@ -22,12 +22,14 @@ end Clock;
 architecture Behavioral of Clock is
 
     --division is done in pre-processing, doesn't affect board usage
-    constant counter_max : integer := (MIN_KITT_CAR_STEP_MS*1000000 / CLK_PERIOD_NS); --auxiliary constant, could be avoided
-    constant counter_max_half : integer := counter_max/2;
-    constant counter_bits : integer := integer(log2(real(counter_max_half)))+ 1;
-      
+    constant counter_max : integer := (MIN_KITT_CAR_STEP_MS*1000000 / CLK_PERIOD_NS); -- auxiliary constant, could be avoided. It's the number of clock peroiods in our highest frequency
+    constant counter_max_half : integer := counter_max/2; -- this is to count half the period
+    constant counter_bits : integer := integer(log2(real(counter_max_half)))+ 1;    -- number of bits needed to count half the period to range the counter's range of the signal defined right below
+    
+    -- initialization of the signals and counters
+
     signal counter : unsigned(counter_bits-1 DOWNTO 0) := (others => '0') ;
-    signal counter_effective : unsigned(NUM_OF_SWS-1 DOWNTO 0) := (others => '0');
+    signal counter_effective : unsigned(NUM_OF_SWS-1 DOWNTO 0) := (others => '0'); 
    -- signal clock_aux : std_logic := '0'; -- auxiliary clock signal
     signal clock_out_signal : std_logic := '0'; --output clock signal'
     
@@ -41,10 +43,10 @@ begin
     
         if reset = '1' then
             
-             counter  <= (others => '0');
-             counter_effective <= (others => '0');
+            counter  <= (others => '0');
+            counter_effective <= (others => '0');
             
-             clock_out_signal <= '0';
+            clock_out_signal <= '0';
                   
         elsif rising_edge(clk) then
             
@@ -59,7 +61,7 @@ begin
                 end if;
 
             else 
-            counter  <= counter + 1;
+                counter  <= counter + 1;
             end if;
 
         end if;

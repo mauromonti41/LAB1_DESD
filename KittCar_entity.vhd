@@ -14,7 +14,7 @@ entity KittCar_entity is
 		NUM_OF_SWS				:	INTEGER	RANGE	1 TO 16 := 4;	-- Number of input switches
 		NUM_OF_LEDS				:	INTEGER	RANGE	1 TO 16 := 16;	-- Number of output LEDs
 
-		TAIL_LENGTH				:	INTEGER	RANGE	1 TO 16	:= 14	-- Tail length
+		TAIL_LENGTH				:	INTEGER	RANGE	1 TO 16	:= 4	-- Tail length
 	);
 	Port (
 
@@ -33,7 +33,7 @@ end KittCar_entity;
 
 architecture Behavioral of KittCar_entity is
 
-	signal clock_slow : std_logic;
+	signal clock_slow : std_logic := '0';		-- signal used to feed the output of the Clock entity and for the input of the ShiftPWM
 
 	component clock is
 		generic(
@@ -70,7 +70,8 @@ begin
 
 	clock_inst : clock
 	generic map (
-	    CLK_PERIOD_NS => CLK_PERIOD_NS,	-- Share the generic parameter with the top-level entity
+	    -- Share the generics parameters with the top-level entity
+		CLK_PERIOD_NS => CLK_PERIOD_NS,	
 		MIN_KITT_CAR_STEP_MS => MIN_KITT_CAR_STEP_MS,
 		NUM_OF_SWS => NUM_OF_SWS
 	)

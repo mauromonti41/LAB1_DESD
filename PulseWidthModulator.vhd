@@ -47,7 +47,7 @@ architecture Behavioral of PulseWidthModulator is
 	---------- INIT ------------
 	constant	T_ON_INIT_UNS	:	UNSIGNED(BIT_LENGTH-1 downto 0)	:= to_unsigned(T_ON_INIT-1, BIT_LENGTH);	--perche' il -1????????
 	constant	PERIOD_INIT_UNS	:	UNSIGNED(BIT_LENGTH-1 downto 0) := to_unsigned(PERIOD_INIT -1, BIT_LENGTH);
-	constant	counter_2_max	:	INTEGER RANGE	1 TO 16 		:= 100000/ to_integer(signed(Period));
+	constant	counter_2_max	:	INTEGER                   		:= 100000/ 3;
 	----------------------------
 
 	-----------------------------------------------------------------

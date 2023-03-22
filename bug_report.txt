@@ -9,3 +9,17 @@ FIXED con il maggiore
 
 [Synth 8-285] failed synthesizing module 'ShiftPWM' ["C:/Users/mario/Documents/GitHub/LAB1_DESD/ShiftPWM.vhd":21]
 [Synth 8-97] array index 1 out of range ["C:/Users/mario/Documents/GitHub/LAB1_DESD/ShiftPWM.vhd":144]
+
+
+3) Standard generic:
+
+Intended: When reset is pressed, first led is subito presente
+Reale: dopo il reset, bisogna aspettare che passi un clock per farlo alzare
+
+
+
+4) Parte da destra o da sinistra dopo il reset?
+
+
+
+5) nel testbench non aumentano i valori di sw???
