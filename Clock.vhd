@@ -51,7 +51,7 @@ begin
             if counter = to_unsigned(counter_max_half, counter'LENGTH) then
                 counter <= (others => '0');
 
-                if to_integer(counter_effective) = to_integer(unsigned(input_sw)) then
+                if to_integer(counter_effective) >= to_integer(unsigned(input_sw)) then
                     counter_effective <= (others => '0');
                     clock_out_signal <= not clock_out_signal;
                 else 
