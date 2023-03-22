@@ -66,44 +66,4 @@ begin
     
     end process;
 
-
-
-    -- inside_clock : process(clk,reset)
-    
-    -- begin
-    
-    --     if reset = '1' then
-    --          counter  <= to_unsigned(0, counter'LENGTH);
-    --          --dobbiamo resettare anche gli altri signal?
-                  
-    --     elsif rising_edge(clk) then
-            
-    --         if counter = counter_effective then
-    --             clock_aux <= not clock_aux;
-    --             counter <= (others => '0');
-
-    --         else 
-    --         counter  <= counter + 1;
-    --         end if;
-
-    --     end if;
-    
-    -- end process;
-
-    -- out_clock: process(clock_aux)
-
-    -- begin
-        
-    --     if counter_effective =  unsigned(input_sw) then
-    --         clock_out <= not clock_out;
-    --         counter_effective <= (others => '0');
-
-    --     else 
-    --         counter_effective <= counter_effective + 1;
-    --     end if;
-
-    -- end process;
-
-    -- clock_out <= clock_out_signal;
-
 end Behavioral;

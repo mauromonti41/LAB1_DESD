@@ -1,0 +1,11 @@
+1)
+Quando numero di led = 8, minimo step 500:
+
+Qu
+
+FIXED con il maggiore
+
+2) When tail lenght = 1, number of led =1
+
+[Synth 8-285] failed synthesizing module 'ShiftPWM' ["C:/Users/mario/Documents/GitHub/LAB1_DESD/ShiftPWM.vhd":21]
+[Synth 8-97] array index 1 out of range ["C:/Users/mario/Documents/GitHub/LAB1_DESD/ShiftPWM.vhd":144]
