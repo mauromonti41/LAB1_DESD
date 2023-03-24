@@ -8,13 +8,13 @@ library IEEE;
 entity KittCar_entity is
 	Generic (
 
-		CLK_PERIOD_NS			:	POSITIVE	RANGE	1	TO	100     := 10;	-- clk period in nanoseconds
-		MIN_KITT_CAR_STEP_MS	:	POSITIVE	RANGE	1	TO	2000    := 1;	-- Minimum step period in milliseconds (i.e., value in milliseconds of Delta_t)
+		CLK_PERIOD_NS			:	POSITIVE RANGE	1	TO	100     := 10;	-- clk period in nanoseconds
+		MIN_KITT_CAR_STEP_MS	:	POSITIVE RANGE	1	TO	2000    := 1;	-- Minimum step period in milliseconds (i.e., value in milliseconds of Delta_t)
 
-		NUM_OF_SWS				:	INTEGER	RANGE	1 TO 16 := 16;	-- Number of input switches
-		NUM_OF_LEDS				:	INTEGER	RANGE	1 TO 16 := 16;	-- Number of output LEDs
+		NUM_OF_SWS				:	INTEGER	 RANGE	1   TO 16       := 16;	-- Number of input switches
+		NUM_OF_LEDS				:	INTEGER	 RANGE	1   TO 16       := 16;	-- Number of output LEDs
 
-		TAIL_LENGTH				:	INTEGER	RANGE	1 TO 16	:= 4	-- Tail length
+		TAIL_LENGTH				:	INTEGER	 RANGE	1   TO 16	    := 4	-- Tail length
 
 	);
 	Port (
@@ -39,15 +39,15 @@ architecture Behavioral of KittCar_entity is
 
 	component clock is
 		generic(
-			CLK_PERIOD_NS			:	POSITIVE	RANGE	1	TO	100 := 10;	-- clk period in nanoseconds
+			CLK_PERIOD_NS			:	POSITIVE	RANGE	1	TO	100  := 10;	-- clk period in nanoseconds
 			MIN_KITT_CAR_STEP_MS	:	POSITIVE	RANGE	1	TO	2000 := 1;	-- Minimum step period in milliseconds (i.e., value in milliseconds of Delta_t)
 			
-			NUM_OF_SWS		        :	INTEGER	    RANGE	1 TO 16 := 16	-- Number of input switches  
+			NUM_OF_SWS		        :	INTEGER	    RANGE	1   TO  16   := 16	-- Number of input switches  
 		);
 		port(
-			reset : in std_logic;
-			clk : in std_logic;
-			input_sw : in std_logic_vector(NUM_OF_SWS-1 downto 0);
+			reset     : in std_logic;
+			clk       : in std_logic;
+			input_sw  : in std_logic_vector(NUM_OF_SWS-1 downto 0);
 
 			clock_out : out std_logic
 		);
@@ -61,25 +61,25 @@ architecture Behavioral of KittCar_entity is
 
 		);
 		port(
-			reset : in std_logic;
-			clk   : in std_logic;
+			reset      : in std_logic;
+			clk        : in std_logic;
 			clock_slow : in std_logic;
 
-			led_out  : out std_logic_vector(0 to NUM_OF_LEDS-1)
+			led_out    : out std_logic_vector(0 to NUM_OF_LEDS-1)
 		);
 	end component;
 
 begin
 
-	exception_for_one_led: if  NUM_OF_LEDS = 1 generate
+	exception_for_one_led: if  NUM_OF_LEDS = 1 generate --check if the num of leds is 1
         led <= (others => '1'); 
 	end generate;
 
 	standard_behaviour: if NUM_OF_LEDS /= 1 generate
 
 		clock_inst : clock
-			generic map (
-				-- Share the generics parameters with the top-level entity
+			generic map ( 				-- Share the generics parameters with the top-level entity
+
 				CLK_PERIOD_NS => CLK_PERIOD_NS,	
 				MIN_KITT_CAR_STEP_MS => MIN_KITT_CAR_STEP_MS,
 				NUM_OF_SWS => NUM_OF_SWS

@@ -8,15 +8,15 @@ library IEEE;
 entity PulseWidthModulator is
 	Generic(
 
-		BIT_LENGTH	:	INTEGER	RANGE	1 TO 16 := 8;	-- Bit used  inside PWM
+		BIT_LENGTH	  :	INTEGER	RANGE 1 TO 16 := 8;			-- Bit used  inside PWM
 
-		T_ON_INIT	:	POSITIVE	:= 64;				-- Init of Ton
-		PERIOD_INIT	:	POSITIVE	:= 128;				-- Init of Period
+		T_ON_INIT	  :	POSITIVE			  := 64;		-- Init of Ton
+		PERIOD_INIT   :	POSITIVE	          := 128;		-- Init of Period
 
-		PWM_INIT	:	STD_LOGIC:= '1';				-- Init of PWM 
+		PWM_INIT	  :	STD_LOGIC             := '1';		-- Init of PWM 
 
 	-------Parameters for PWM COUNTER_MAX setting------
-		PERIOD_VALUE  : POSITIVE := 3				      			
+		PERIOD_VALUE  : POSITIVE   			  := 3				      			
 	---------------------------------------------------
 			
 	);
@@ -43,7 +43,7 @@ architecture Behavioral of PulseWidthModulator is
 	------------------ CONSTANT DECLARATION -------------------------
 
 	---------- INIT ------------
-	constant	T_ON_INIT_UNS	:	UNSIGNED(BIT_LENGTH-1 downto 0)	:= to_unsigned(T_ON_INIT-1, BIT_LENGTH);	--perche' il -1????????
+	constant	T_ON_INIT_UNS	:	UNSIGNED(BIT_LENGTH-1 downto 0)	:= to_unsigned(T_ON_INIT-1, BIT_LENGTH);
 	constant	PERIOD_INIT_UNS	:	UNSIGNED(BIT_LENGTH-1 downto 0) := to_unsigned(PERIOD_INIT -1, BIT_LENGTH);
 	----------------------------
 
@@ -51,7 +51,7 @@ architecture Behavioral of PulseWidthModulator is
 	---------------------CLOCK SLOW DOWN-----------------------------
 	
 	--value 10k works for any clock_value between the given range
-	constant counter_2_max : INTEGER := 10000/PERIOD_VALUE;
+	constant counter_2_max  : INTEGER := 10000/PERIOD_VALUE;
 	
 	---------------------------- SIGNALS ----------------------------
 
@@ -62,7 +62,7 @@ architecture Behavioral of PulseWidthModulator is
 	signal	count		    :	UNSIGNED(BIT_LENGTH-1 downto 0)	:= (Others => '0');
 	signal	counter_2	    :	UNSIGNED(BIT_LENGTH-1 downto 0)	:= (Others => '0');
 
-	signal	pwm_reg		    :	STD_LOGIC	:= PWM_INIT;
+	signal	pwm_reg		    :	STD_LOGIC						:= PWM_INIT;
 
 	----------------------------
 
@@ -71,7 +71,7 @@ architecture Behavioral of PulseWidthModulator is
 begin
 
 	----------------------------- DATA FLOW ---------------------------
-	PWM		<= pwm_reg;
+	PWM	<= pwm_reg;
 	-------------------------------------------------------------------
 
 	----------------------------- PROCESS ------------------------------
@@ -106,7 +106,7 @@ begin
 					count		<= (Others => '0');
 
 					-- Toggle the output (set on)
-					pwm_reg	<= PWM_INIT;
+					pwm_reg	    <= PWM_INIT;
 
 					-- Sample Period and Ton to guarantee glitch-less behavior inside a period and on rising_edge(clk)
 					Period_reg	<=	unsigned(Period);

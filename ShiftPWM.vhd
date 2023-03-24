@@ -129,7 +129,7 @@ begin
                 for I in 0 TO TAIL_LENGTH-1 loop                 -- In the first clocks the lights appear 1 by 1
 
                     if clock_count = I then
-                        mem_1(0) <= mem_ini(I);
+                        mem_1(0)    <= mem_ini(I);
                         clock_count <= clock_count + 1;
                     end if;
 
