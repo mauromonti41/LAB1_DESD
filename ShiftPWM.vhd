@@ -5,16 +5,17 @@ library IEEE;
 
 entity ShiftPWM is
     Generic(
-        NUM_OF_LEDS		:	INTEGER	RANGE   1 TO 16;
-        TAIL_LENGTH		:	INTEGER	RANGE	1 TO 16  
+        NUM_OF_LEDS		  :	INTEGER	RANGE   1 TO 16;
+        TAIL_LENGTH		  :	INTEGER	RANGE	1 TO 16
+
     );
     Port ( 
         ---------- Reset/Clock ----------
-        reset   :   IN  STD_LOGIC;
-        clk     :   IN  STD_LOGIC;
-        clock_slow : IN STD_LOGIC;
+        reset      :   IN  STD_LOGIC;
+        clk        :   IN  STD_LOGIC;
+        clock_slow :   IN  STD_LOGIC; -- slow clock needed to work the PWM at a lower freq in order to use the leds under the cut-frequency
         ------------- Data --------------
-        led_out  :   OUT   STD_LOGIC_VECTOR(0 to NUM_OF_LEDS-1)
+        led_out    :   OUT STD_LOGIC_VECTOR (0 to NUM_OF_LEDS-1)
     );
 end ShiftPWM;
 
@@ -24,13 +25,17 @@ architecture Behavioral of ShiftPWM is
         Generic(
 
 		BIT_LENGTH	:	INTEGER	RANGE	1 TO 16 := 8;	-- Bit used  inside PWM
-
 		T_ON_INIT	:	POSITIVE	:= 64;				-- Init of Ton
-		PERIOD_INIT	:	POSITIVE	:= 128;				-- Init of Periof
+		PERIOD_INIT	:	POSITIVE	:= 128;				-- Init of Period
 
-		PWM_INIT	:	STD_LOGIC:= '1'					-- Init of PWM     --e' un pwm al contrario???
-	);
-	Port (
+		PWM_INIT	:	STD_LOGIC:= '1';				-- Init of PWM 
+
+	 -------Parameters for COUNTER_MAX setting------
+		PERIOD_VALUE      : POSITIVE := 3			      			
+	 -----------------------------------------------	
+			
+	    );
+	    Port (
 
 		------- Reset/Clock --------
 		reset	:	IN	STD_LOGIC;
@@ -44,25 +49,10 @@ architecture Behavioral of ShiftPWM is
 		PWM		:	OUT	STD_LOGIC		-- PWM signal
 		----------------------------
 
-	);
+	    );
     end component;
 
-    component clock is
-        generic(
-           CLK_PERIOD_NS			:	POSITIVE	RANGE	1	TO	100 := 10;	-- clk period in nanoseconds
-           MIN_KITT_CAR_STEP_MS	:	POSITIVE	RANGE	1	TO	2000 := 1;	-- Minimum step period in milliseconds (i.e., value in milliseconds of Delta_t)
-           
-           NUM_OF_SWS		        :	INTEGER	    RANGE	1 TO 16 := 16	-- Number of input switches  
-       );
-       port(
-           reset : in std_logic;
-           clk : in std_logic;
-   
-           input_sw : in std_logic_vector(NUM_OF_SWS-1 downto 0);
-           clock_out : out std_logic
-       );
-       end component;
-
+    
     ----------------------- Constants Declaration ------------------------
     
     ----- Initialization in SLV ----
@@ -81,14 +71,14 @@ architecture Behavioral of ShiftPWM is
     ------------------------- Signal Declaration -------------------------
     
     ------------ Memory  ------------
-    signal  mem_1   :   MEM_ARRAY_TYPE_1 := (Others  =>(others => '0'));
-    signal  mem_2   :   MEM_ARRAY_TYPE_2 := (Others  =>(others => '0'));
-    signal  mem_fin :   MEM_ARRAY_TYPE_1 := (Others  =>(others => '0'));
+    signal  mem_1   :               MEM_ARRAY_TYPE_1 := (Others  =>(others => '0'));
+    signal  mem_2   :               MEM_ARRAY_TYPE_2 := (Others  =>(others => '0'));
+    signal  mem_fin :               MEM_ARRAY_TYPE_1 := (Others  =>(others => '0'));
 
-    signal  mem_ini :   MEM_ARRAY_TYPE_3 := (Others  =>(others => '0'));
+    signal  mem_ini :               MEM_ARRAY_TYPE_3 := (Others  =>(others => '0'));
 
-    signal clock_count : UNSIGNED(SR_WIDTH-1 DOWNTO 0) := ((others => '0'));
-    signal clock_value_old : STD_LOGIC := '0';
+    signal clock_count :            UNSIGNED(SR_WIDTH-1 DOWNTO 0) := ((others => '0'));
+    signal clock_value_old :        STD_LOGIC := '0';
     
     ---------------------------------    
    --- signal counter : unsigned( DOWNTO 0) := ((others => '0'));     IMPORTANTE : rivedi quanto Ã¨ grande perchÃ¨ dipende dalla tail e dopo cambia l'hard coding dell'inizializzazione
@@ -98,11 +88,11 @@ architecture Behavioral of ShiftPWM is
 begin
 
     ini_value : for I in 0 TO TAIL_LENGTH-1 generate
-        mem_ini(I) <= std_logic_vector(to_unsigned(TAIL_LENGTH-I, mem_ini(I)'LENGTH));        
+        mem_ini(I) <= std_logic_vector(to_unsigned(TAIL_LENGTH-I, mem_ini(I)'LENGTH));  --initialization of the tail in order to make the leds appear 1 by 1      
     end generate;
             
     inst_pwm: for I in 0 to NUM_OF_LEDS - 1 generate
-    
+
         pwm_inst_I: PulseWidthModulator
         generic map (
             BIT_LENGTH => SR_WIDTH,	        -- Bit used  inside PWM
@@ -111,7 +101,10 @@ begin
 --                T_ON_INIT => 0,				-- Init of Ton
 --                PERIOD_INIT => 0,			-- Init of Periof
     
-            PWM_INIT => '1'		-- Init of PWM     --e' un pwm al contrario???
+            PWM_INIT => '1',		-- Init of PWM     --e' un pwm al contrario???
+
+            PERIOD_VALUE => TAIL_LENGTH-1
+
         )
         port map (
             reset => reset,
@@ -175,17 +168,16 @@ begin
                     else    
                         mem_fin(I) <= mem_1(I) or mem_2(I);
                     end if;
-                end loop;
 
-            
+                end loop;
 
             elsif (clock_value_old = '1' and clock_slow = '0') then
                 clock_value_old <= clock_slow;
         
-    
             end if;
 
         end if;
+        
     end process;
 
 end Behavioral;

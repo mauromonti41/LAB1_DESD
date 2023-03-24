@@ -11,10 +11,11 @@ entity KittCar_entity is
 		CLK_PERIOD_NS			:	POSITIVE	RANGE	1	TO	100     := 10;	-- clk period in nanoseconds
 		MIN_KITT_CAR_STEP_MS	:	POSITIVE	RANGE	1	TO	2000    := 1;	-- Minimum step period in milliseconds (i.e., value in milliseconds of Delta_t)
 
-		NUM_OF_SWS				:	INTEGER	RANGE	1 TO 16 := 4;	-- Number of input switches
+		NUM_OF_SWS				:	INTEGER	RANGE	1 TO 16 := 16;	-- Number of input switches
 		NUM_OF_LEDS				:	INTEGER	RANGE	1 TO 16 := 16;	-- Number of output LEDs
 
 		TAIL_LENGTH				:	INTEGER	RANGE	1 TO 16	:= 4	-- Tail length
+
 	);
 	Port (
 
@@ -33,6 +34,7 @@ end KittCar_entity;
 
 architecture Behavioral of KittCar_entity is
 
+	
 	signal clock_slow : std_logic := '0';		-- signal used to feed the output of the Clock entity and for the input of the ShiftPWM
 
 	component clock is
@@ -53,9 +55,10 @@ architecture Behavioral of KittCar_entity is
 	
 	component ShiftPWM is
 		
-		generic(
-			NUM_OF_LEDS		:	INTEGER	RANGE   1 TO 16;
-			TAIL_LENGTH		:	INTEGER	RANGE	1 TO 16  
+		Generic(
+			NUM_OF_LEDS		  :	INTEGER	RANGE   1 TO 16;
+			TAIL_LENGTH		  :	INTEGER	RANGE	1 TO 16
+
 		);
 		port(
 			reset : in std_logic;
@@ -68,32 +71,38 @@ architecture Behavioral of KittCar_entity is
 
 begin
 
-	clock_inst : clock
-	generic map (
-	    -- Share the generics parameters with the top-level entity
-		CLK_PERIOD_NS => CLK_PERIOD_NS,	
-		MIN_KITT_CAR_STEP_MS => MIN_KITT_CAR_STEP_MS,
-		NUM_OF_SWS => NUM_OF_SWS
-	)
-	port map(
-		reset => reset,
-		clk => clk,
-		input_sw => sw,
-		clock_out => clock_slow
-	);
+	if  NUM_OF_LEDS = 1 generate
+        led <= (others => '1'); 
+	end generate;
 
-	shift_PWM_inst : ShiftPWM
-	generic map (
-		NUM_OF_LEDS	=> NUM_OF_LEDS,
-        TAIL_LENGTH	=> TAIL_LENGTH	
-	)
-	port map(
-		reset => reset,
-		clk => clk,
-		clock_slow => clock_slow,
-		led_out => led
-	);
+	if NUM_OF_LEDS /= 1 generate
 
+		clock_inst : clock
+			generic map (
+				-- Share the generics parameters with the top-level entity
+				CLK_PERIOD_NS => CLK_PERIOD_NS,	
+				MIN_KITT_CAR_STEP_MS => MIN_KITT_CAR_STEP_MS,
+				NUM_OF_SWS => NUM_OF_SWS
+			)
+			port map(
+				reset => reset,
+				clk => clk,
+				input_sw => sw, 
+				clock_out => clock_slow
+			);
+
+		shift_PWM_inst : ShiftPWM
+			generic map (
+				NUM_OF_LEDS	=> NUM_OF_LEDS,
+				TAIL_LENGTH	=> TAIL_LENGTH
+			)
+			port map(
+				reset => reset,
+				clk => clk,
+				clock_slow => clock_slow,
+				led_out => led
+			);
+
+	end generate;
+			
 end Behavioral;
-
-
