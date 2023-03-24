@@ -71,11 +71,11 @@ architecture Behavioral of KittCar_entity is
 
 begin
 
-	if  NUM_OF_LEDS = 1 generate
+	exception_for_one_led: if  NUM_OF_LEDS = 1 generate
         led <= (others => '1'); 
 	end generate;
 
-	if NUM_OF_LEDS /= 1 generate
+	standard_behaviour: if NUM_OF_LEDS /= 1 generate
 
 		clock_inst : clock
 			generic map (
